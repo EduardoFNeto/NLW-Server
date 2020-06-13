@@ -14,13 +14,9 @@ class PointsController {
       .join('point_items', 'points.id', '=', 'point_items.point_id')
       .whereIn('point_items.item_id', parsedItems)
       .where('city', String(city))
-      .where('uf', String(uf))
-     
-      console.log(await knex('points')
+      .where('uf', String(uf))     
       .join('point_items', 'points.id', '=', 'point_items.point_id')
       .whereIn('point_items.item_id', parsedItems)
-      )
-
     return response.json(points)
   }
 
